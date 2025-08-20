@@ -1,0 +1,49 @@
+{
+  "movies": [
+    {
+      "title": "Inception",
+      "year": "2010",
+      "rated": "PG-13",
+      "released": "2010-07-16",
+      "runtime": "148 min",
+      "genre": "Action, Adventure, Sci-Fi",
+      "director": "Christopher Nolan"
+    },
+    {
+      "title": "The Dark Knight",
+      "year": "2008",
+      "rated": "PG-13",
+      "released": "2008-07-18",
+      "runtime": "152 min",
+      "genre": "Action, Crime, Drama",
+      "director": "Christopher Nolan"
+    },
+    {
+      "title": "Interstellar",
+      "year": "2014",
+      "rated": "PG-13",
+      "released": "2014-11-07",
+      "runtime": "169 min",
+      "genre": "Adventure, Drama, Sci-Fi",
+      "director": "Christopher Nolan"
+    },
+    {
+      "title": "The Matrix",
+      "year": "1999",
+      "rated": "R",
+      "released": "1999-03-31",
+      "runtime": "136 min",
+      "genre": "Action, Sci-Fi",
+      "director": "The Wachowskis"
+    },
+    {
+      "title": "Gladiator",
+      "year": "2000",
+      "rated": "R",
+      "released": "2000-05-05",
+      "runtime": "155 min",
+      "genre": "Action, Adventure, Drama",
+      "director": "Ridley Scott"
+    }
+  ]
+}
