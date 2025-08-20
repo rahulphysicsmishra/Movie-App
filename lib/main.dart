@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'providers/movie_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  runApp(ChangeNotifierProvider(create: (BuildContext context)=> MovieProvider(),
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  
 
   // This widget is the root of your application.
   @override
@@ -29,11 +35,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
+    final movies = Provider.of<MovieProvider>(context).loadMovies();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Movies"),
+      ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: movies.length,
+          itemBuilder: (context, index){
+            return Text(movies[index]);
+        }),
       ),
     );
   }
