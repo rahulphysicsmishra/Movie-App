@@ -20,17 +20,17 @@ class Movie {
   /// Factory constructor to create a Movie from JSON
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
-      title: json['title'] ?? '',
-      year: json['year'] ?? '',
-      rated: json['rated'] ?? '',
-      released: json['released'] ?? '',
-      runtime: json['runtime'] ?? '',
-      genre: json['genre'] ?? '',
-      director: json['director'] ?? '',
+      title: json['title'] ?? json['Title'] ?? '',
+      year: json['year'] ?? json['Year'] ?? '',
+      rated: json['rated'] ?? json['Rated'] ?? '',
+      released: json['released'] ?? json['Released'] ?? '',
+      runtime: json['runtime'] ?? json['Runtime'] ?? '',
+      genre: json['genre'] ?? json['Genre'] ?? '',
+      director: json['director'] ?? json['Director'] ?? '',
     );
   }
 
-  /// Convert Movie to JSON
+  /// Convert Movie to JSON (always lowercase keys for consistency)
   Map<String, dynamic> toJson() {
     return {
       'title': title,

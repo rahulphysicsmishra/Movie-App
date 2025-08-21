@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/models/movie.dart';
+import 'package:movie_app/utils/movie_parser.dart';
 
 class MovieProvider extends ChangeNotifier {
-  final List<String> _moviesList =  [
-    "Inception",
-    "Interstellar",
-    "The Dark Knight",
-    "Pulp Fiction",
-    "The Shawshank Redemption"
+  List<Movie> _moviesList =  [
+   
   ];
 
-  List<String> get moviesList => _moviesList;
+  List<Movie> get moviesList => _moviesList;
 
-  List<String> loadMovies() {
-    // Simulate a network call or database query
-    return _moviesList;
+  Future<void> loadMovies(BuildContext context) async {
+    try {
+      final jsonString = await DefaultAssetBundle.of(context)
+          .loadString('assets/data/films.json');
+      print("Raw JSON: $jsonString");
+
+      final movies = MovieParser.parse(jsonString);
+      print("Parsed movies: ${movies.map((m) => m.title).toList()}");
+
+      _moviesList = movies;
+    } catch (e) {
+      print('Error loading movies: $e');
+    } finally {
+      notifyListeners();
+    }
   }
 }
